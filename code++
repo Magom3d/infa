@@ -1,0 +1,65 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <stdlib.h>
+
+using namespace std;
+
+int main() {
+char c;
+float a, b;
+int o;
+cout<< "1-calculator/0-exit" << endl;
+cin >> c;
+if (c=='0') {
+exit(0);
+}
+cout << "Vedite chislo"<< endl;
+cin >> a;
+do{
+cout << "Vedite znak" << endl;
+cin >> c;
+cout << "Vedite chislo" << endl;
+cin >> b;
+switch (c) {
+case '+':
+cout << a << "+" << b << "=" << a+b << endl;
+a=a+b;
+break;
+case '-':
+cout << a << "-" << b << "=" << a-b << endl;
+a=a-b;
+break;
+case '/':
+if (b==0 | b==-0){
+    cout << "delit na 0 nizya";}
+else
+{cout << a << "/" << b << "=" << a/b << endl;
+a=a/b;}
+break;
+case '*':
+cout << a << "*" << b << "=" << a*b << endl;
+a=a*b;
+break;
+case '^':
+cout << a << "^" << b << "=" << pow(a,b) << endl;
+a=pow(a,b);
+break;
+case '%':
+if (b==0 | b==-0)
+{cout << a << "%" << b << "=" << "0%" << endl;
+a=0;}
+else {
+cout << a << "%" << b << "=" << a/100*b << "%" << endl;
+a=a/100*b;
+}
+break;
+default:
+cout << "Error, unknown operation" << endl;
+}
+cout << "Prodoljit? Y/N" << endl;
+cin >> c;
+cout << a << endl;
+}
+while (c=='Y');
+}
